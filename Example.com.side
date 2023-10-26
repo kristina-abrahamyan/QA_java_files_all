@@ -1,0 +1,67 @@
+{
+  "id": "769f3627-ea0b-4288-84ee-e1d57158b288",
+  "version": "2.0",
+  "name": "Example.com",
+  "url": "https://example.com",
+  "tests": [{
+    "id": "d7ed2d0d-909a-4fbc-a821-70347af7aaea",
+    "name": "Example.com",
+    "commands": [{
+      "id": "0c059cd8-48b6-4b06-8b99-15fb656725af",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "707a5d03-bef0-4ccb-b38a-04959b4d96f4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9fce73f-df5c-45a3-bd66-3773299a4ab7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=More information...",
+      "targets": [
+        ["linkText=More information...", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'More information...')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://www.iana.org/domains/example')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'More information...')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc99d166-6257-40c0-a98b-adde6ef503c3",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Example Domains",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d7fcb386-6c9b-4cc9-8153-dbceff5d19e9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='body']/article/main/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"]
+      ],
+      "value": "We provide a web service on the example domain hosts to provide basic information on the purpose of the domain. These web services are provided as best effort, but are not designed to support production applications. While incidental traffic for incorrectly configured applications is expected, please do not design applications that require the example domains to have operating HTTP service."
+    }]
+  }],
+  "suites": [{
+    "id": "8cf41705-8079-4639-a05d-5dec6f31ebde",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d7ed2d0d-909a-4fbc-a821-70347af7aaea"]
+  }],
+  "urls": ["https://example.com/"],
+  "plugins": []
+}
